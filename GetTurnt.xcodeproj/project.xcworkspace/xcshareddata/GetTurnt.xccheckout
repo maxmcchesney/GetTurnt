@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EA315296-2F1B-45AB-A0AA-41BEEE74884B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GetTurnt</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>055DC978E939236E464CAE1147F497F085C0AE36</key>
+		<string>https://github.com/maxmcchesney/GetTurnt.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GetTurnt.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>055DC978E939236E464CAE1147F497F085C0AE36</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/maxmcchesney/GetTurnt.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>055DC978E939236E464CAE1147F497F085C0AE36</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>055DC978E939236E464CAE1147F497F085C0AE36</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GetTurnt</string>
+		</dict>
+	</array>
+</dict>
+</plist>

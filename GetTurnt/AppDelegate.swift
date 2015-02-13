@@ -16,6 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        Parse.enableLocalDatastore()    // not working, implement later
+        
+        Parse.setApplicationId("HRLJkap3BsNR2YFG0r0hJlc7rxmgYHjnucUmevGu", clientKey: "dNw0rczQmREfYokajmRKq8ssvS5AL6yscOO35iOB")
+        
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+
+//        below stuff needed?
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.makeKeyAndVisible()
+        
+        var mainSB = UIStoryboard(name: "Main", bundle: nil)
+        var loginVC = mainSB.instantiateInitialViewController() as LoginViewController
+        
+        window?.rootViewController = loginVC
+        
+        
         return true
     }
 
