@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
                 
                 self.buttonBottomConstraint.constant = 20 + kbSize.height
                 
-                self.getTurntImage.alpha = 0.15
+                self.getTurntImage.alpha = 0.15     // fade out the logo image when keyboard rises
                 
                 self.usernameField.layer.borderColor = UIColor.grayColor().CGColor
                 self.passwordField.layer.borderColor = UIColor.grayColor().CGColor
@@ -81,9 +81,6 @@ class LoginViewController: UIViewController {
             // all fields are not filled in
             var alertViewController = UIAlertController(title: "Submission Error", message: "Please fill in all fields.", preferredStyle: UIAlertControllerStyle.Alert)
             
-            //            UIAlertAction * defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-            //            handler:^(UIAlertAction * action) {}];
-            
             var defaultAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
             
             alertViewController.addAction(defaultAction)
@@ -128,7 +125,7 @@ class LoginViewController: UIViewController {
                 println("Login successful. Logged in as \(user).")
                 // Do stuff after successful login.
                 
-                self.isLoggedIn = true
+                TurntData.mainData().isLoggedIn = true
                 self.checkIfLoggedIn()
                 
             } else {
@@ -154,7 +151,7 @@ class LoginViewController: UIViewController {
                 
                 println("Signup successful. New account created: \(user)")
                 
-                self.isLoggedIn = true
+                TurntData.mainData().isLoggedIn = true
                 self.checkIfLoggedIn()
                 
                 self.usernameField.text = ""
@@ -175,31 +172,9 @@ class LoginViewController: UIViewController {
         
     }
     
-    
-    var isLoggedIn: Bool {
-        
-        get {
-            
-            return NSUserDefaults.standardUserDefaults().boolForKey("isLoggedIn")
-            
-        }
-        
-        set {
-            
-            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "isLoggedIn")
-            NSUserDefaults.standardUserDefaults().synchronize()
-            
-        }
-        
-    }
-    
     func checkIfLoggedIn() {
                 
-        if isLoggedIn {
-         
-//            var tbc = storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as? UITabBarController
-//            
-//            UIApplication.sharedApplication().keyWindow?.rootViewController = tbc
+        if TurntData.mainData().isLoggedIn {
             
             var nbc = storyboard?.instantiateViewControllerWithIdentifier("navBarController") as? UINavigationController
             
