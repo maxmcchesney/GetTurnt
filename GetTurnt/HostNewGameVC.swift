@@ -88,9 +88,18 @@ class HostNewGameVC: UIViewController, UITextFieldDelegate {
         newGame.saveInBackgroundWithBlock { (success, error) -> Void in
             if success {
                 println("New Game saved successfully")
+                TurntData.mainData().currentGame = newGame
+                
+                let userWineInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("userWineInfoVC") as UserWineInfoViewController
+                
+                userWineInfoVC.selectedGameID = newGame.objectId
+                
+                self.presentViewController(userWineInfoVC, animated: true, completion: nil)
+                
             } else {
                 println("Game not saved. Error: \(error)")
             }
+            
             TurntData.mainData().refreshGameFeedItems({ () -> () in
                 println("Game Feed refreshed.")
             })

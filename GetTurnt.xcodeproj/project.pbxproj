@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D805A0CB1A89323D001EF269 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D805A0CA1A89323D001EF269 /* AppDelegate.swift */; };
-		D805A0D01A89323D001EF269 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D805A0CE1A89323D001EF269 /* Main.storyboard */; };
 		D805A0D21A89323D001EF269 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D805A0D11A89323D001EF269 /* Images.xcassets */; };
 		D805A0D51A89323D001EF269 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D805A0D31A89323D001EF269 /* LaunchScreen.xib */; };
 		D805A0E11A89323D001EF269 /* GetTurntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D805A0E01A89323D001EF269 /* GetTurntTests.swift */; };
 		D805A0EC1A893BB4001EF269 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D805A0EB1A893BB4001EF269 /* CustomButton.swift */; };
+		D85E936C1A9FD10700184E72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D805A0CE1A89323D001EF269 /* Main.storyboard */; };
+		D85E936D1A9FD11000184E72 /* InGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E287E31A9FC17700C4AE7B /* InGameTableViewCell.swift */; };
 		D86798571A8E470F00E3AC1E /* StartGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86798561A8E470F00E3AC1E /* StartGameVC.swift */; };
 		D867985A1A8E49D600E3AC1E /* TurntData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86798591A8E49D600E3AC1E /* TurntData.swift */; };
 		D867985C1A8E5ADE00E3AC1E /* JoinGameTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D867985B1A8E5ADE00E3AC1E /* JoinGameTVC.swift */; };
@@ -38,6 +39,8 @@
 		D869337E1A8D2242005C29F4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D869337D1A8D2242005C29F4 /* libsqlite3.dylib */; };
 		D86933801A8D2E93005C29F4 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D869337F1A8D2E93005C29F4 /* CustomTextField.swift */; };
 		D8E287AC1A9E766D00C4AE7B /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E287AB1A9E766D00C4AE7B /* NavigationViewController.swift */; };
+		D8E287E21A9FA1D400C4AE7B /* UserWineInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E287E11A9FA1D400C4AE7B /* UserWineInfoViewController.swift */; };
+		D8E287EC1A9FD0AE00C4AE7B /* CustomSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E287EA1A9FCCC200C4AE7B /* CustomSlider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,10 @@
 		D869337D1A8D2242005C29F4 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D869337F1A8D2E93005C29F4 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		D8E287AB1A9E766D00C4AE7B /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		D8E287E11A9FA1D400C4AE7B /* UserWineInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWineInfoViewController.swift; sourceTree = "<group>"; };
+		D8E287E31A9FC17700C4AE7B /* InGameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameTableViewCell.swift; sourceTree = "<group>"; };
+		D8E287E91A9FCCC200C4AE7B /* CustomSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSlider.h; sourceTree = "<group>"; };
+		D8E287EA1A9FCCC200C4AE7B /* CustomSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSlider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,16 +152,11 @@
 		D805A0C71A89323D001EF269 /* GetTurnt */ = {
 			isa = PBXGroup;
 			children = (
-				D86798581A8E49A800E3AC1E /* Models */,
-				D805A0EA1A893B85001EF269 /* IBDesignables */,
 				D805A0CE1A89323D001EF269 /* Main.storyboard */,
-				D869335C1A8D20BE005C29F4 /* LoginViewController.swift */,
-				D86798561A8E470F00E3AC1E /* StartGameVC.swift */,
-				D867985D1A8E5BA600E3AC1E /* HostNewGameVC.swift */,
-				D867985B1A8E5ADE00E3AC1E /* JoinGameTVC.swift */,
-				D867985F1A8E695200E3AC1E /* JoinGameTableViewCell.swift */,
-				D86798611A912C7D00E3AC1E /* GameTVC.swift */,
-				D8E287AB1A9E766D00C4AE7B /* NavigationViewController.swift */,
+				D86798581A8E49A800E3AC1E /* Models */,
+				D8E287E01A9F9EF600C4AE7B /* Controllers */,
+				D8E287DF1A9F9EEF00C4AE7B /* Views */,
+				D805A0EA1A893B85001EF269 /* IBDesignables */,
 				D805A0C81A89323D001EF269 /* Supporting Files */,
 			);
 			path = GetTurnt;
@@ -192,6 +194,8 @@
 		D805A0EA1A893B85001EF269 /* IBDesignables */ = {
 			isa = PBXGroup;
 			children = (
+				D8E287E91A9FCCC200C4AE7B /* CustomSlider.h */,
+				D8E287EA1A9FCCC200C4AE7B /* CustomSlider.m */,
 				D805A0EB1A893BB4001EF269 /* CustomButton.swift */,
 				D869337F1A8D2E93005C29F4 /* CustomTextField.swift */,
 			);
@@ -228,6 +232,29 @@
 			);
 			name = Frameworks;
 			path = GetTurnt;
+			sourceTree = "<group>";
+		};
+		D8E287DF1A9F9EEF00C4AE7B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D867985F1A8E695200E3AC1E /* JoinGameTableViewCell.swift */,
+				D8E287E31A9FC17700C4AE7B /* InGameTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D8E287E01A9F9EF600C4AE7B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D869335C1A8D20BE005C29F4 /* LoginViewController.swift */,
+				D8E287AB1A9E766D00C4AE7B /* NavigationViewController.swift */,
+				D86798561A8E470F00E3AC1E /* StartGameVC.swift */,
+				D867985D1A8E5BA600E3AC1E /* HostNewGameVC.swift */,
+				D867985B1A8E5ADE00E3AC1E /* JoinGameTVC.swift */,
+				D8E287E11A9FA1D400C4AE7B /* UserWineInfoViewController.swift */,
+				D86798611A912C7D00E3AC1E /* GameTVC.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,7 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D805A0D01A89323D001EF269 /* Main.storyboard in Resources */,
+				D85E936C1A9FD10700184E72 /* Main.storyboard in Resources */,
 				D805A0D51A89323D001EF269 /* LaunchScreen.xib in Resources */,
 				D805A0D21A89323D001EF269 /* Images.xcassets in Resources */,
 			);
@@ -330,14 +357,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E287E21A9FA1D400C4AE7B /* UserWineInfoViewController.swift in Sources */,
 				D86933801A8D2E93005C29F4 /* CustomTextField.swift in Sources */,
 				D8E287AC1A9E766D00C4AE7B /* NavigationViewController.swift in Sources */,
+				D8E287EC1A9FD0AE00C4AE7B /* CustomSlider.m in Sources */,
 				D869335D1A8D20BE005C29F4 /* LoginViewController.swift in Sources */,
 				D805A0CB1A89323D001EF269 /* AppDelegate.swift in Sources */,
 				D86798601A8E695200E3AC1E /* JoinGameTableViewCell.swift in Sources */,
 				D867985E1A8E5BA600E3AC1E /* HostNewGameVC.swift in Sources */,
 				D867985A1A8E49D600E3AC1E /* TurntData.swift in Sources */,
 				D867985C1A8E5ADE00E3AC1E /* JoinGameTVC.swift in Sources */,
+				D85E936D1A9FD11000184E72 /* InGameTableViewCell.swift in Sources */,
 				D86798571A8E470F00E3AC1E /* StartGameVC.swift in Sources */,
 				D805A0EC1A893BB4001EF269 /* CustomButton.swift in Sources */,
 				D86798621A912C7D00E3AC1E /* GameTVC.swift in Sources */,

@@ -68,6 +68,12 @@ class JoinGameTVC: UITableViewController {
         
         println("User requests to join game...")
         
+        let selectedGameID = TurntData.mainData().gameFeedItems[indexPath.row].objectId
+        
+        // TODO: check if user already has wine types entered and if not push VC
+        let userWineInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("userWineInfoVC") as UserWineInfoViewController
+        userWineInfoVC.selectedGameID = selectedGameID
+        self.presentViewController(userWineInfoVC, animated: true, completion: nil)
         
         
         

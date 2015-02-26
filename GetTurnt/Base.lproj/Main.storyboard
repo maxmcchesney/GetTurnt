@@ -370,7 +370,7 @@
                                             <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="done"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVB-wA-YOB" customClass="CustomButton" customModule="GetTurnt" customModuleProvider="target">
-                                            <rect key="frame" x="212.5" y="315" width="175" height="50"/>
+                                            <rect key="frame" x="213" y="315" width="175" height="50"/>
                                             <color key="backgroundColor" red="0.5" green="0.69767680919999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="175" id="12z-lk-F1p"/>
@@ -392,11 +392,10 @@
                                             <connections>
                                                 <action selector="createGame:" destination="5vf-M2-ZUX" eventType="touchUpInside" id="tCn-EJ-lEr"/>
                                                 <action selector="hostNewGame:" destination="aCw-R5-dgm" eventType="touchUpInside" id="Iqs-V0-MZ0"/>
-                                                <segue destination="UTc-3x-qH6" kind="presentation" id="mlC-yb-NLd"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of Bottles / Person: 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnE-Aa-BOh">
-                                            <rect key="frame" x="209" y="183" width="182.5" height="20"/>
+                                            <rect key="frame" x="209" y="183" width="183" height="20"/>
                                             <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -490,6 +489,164 @@
             </objects>
             <point key="canvasLocation" x="2976" y="-8"/>
         </scene>
+        <!--User Wine Info View Controller-->
+        <scene sceneID="NT6-VV-e6Y">
+            <objects>
+                <viewController storyboardIdentifier="userWineInfoVC" id="TKd-0u-bOP" customClass="UserWineInfoViewController" customModule="GetTurnt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ejF-Wv-Ao6"/>
+                        <viewControllerLayoutGuide type="bottom" id="gOo-3p-hA9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yud-WU-Nm3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First, which wine did you bring?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0f-jo-qEV">
+                                <rect key="frame" x="155" y="50" width="290" height="22"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Light" family="American Typewriter" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brand" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kZp-gu-C5U">
+                                <rect key="frame" x="26" y="97" width="548" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faz-aU-hgz" customClass="CustomButton" customModule="GetTurnt" customModuleProvider="target">
+                                <rect key="frame" x="212" y="152" width="175" height="50"/>
+                                <color key="backgroundColor" red="0.5" green="0.69767680919999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="0gG-QF-oyv"/>
+                                    <constraint firstAttribute="height" constant="50" id="IYr-jM-5AD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="19"/>
+                                <state key="normal" title="On To The Game!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeSize">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createGame:" destination="5vf-M2-ZUX" eventType="touchUpInside" id="IAW-fK-mS6"/>
+                                    <action selector="hostNewGame:" destination="aCw-R5-dgm" eventType="touchUpInside" id="2x3-Ch-G4b"/>
+                                    <action selector="saveWines:" destination="TKd-0u-bOP" eventType="touchUpInside" id="7u8-Dh-maO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="g0f-jo-qEV" secondAttribute="centerX" id="03v-YP-7sH"/>
+                            <constraint firstItem="g0f-jo-qEV" firstAttribute="top" secondItem="ejF-Wv-Ao6" secondAttribute="bottom" constant="30" id="9tS-rl-vhu"/>
+                            <constraint firstAttribute="centerX" secondItem="faz-aU-hgz" secondAttribute="centerX" id="Lbt-ma-PqR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kZp-gu-C5U" secondAttribute="trailing" constant="10" id="Ocb-ao-M48"/>
+                            <constraint firstItem="kZp-gu-C5U" firstAttribute="leading" secondItem="Yud-WU-Nm3" secondAttribute="leadingMargin" constant="10" id="Wjh-CA-iWk"/>
+                            <constraint firstItem="kZp-gu-C5U" firstAttribute="trailing" secondItem="Yud-WU-Nm3" secondAttribute="trailingMargin" constant="10" id="bGY-eu-2D3"/>
+                            <constraint firstItem="kZp-gu-C5U" firstAttribute="top" secondItem="g0f-jo-qEV" secondAttribute="bottom" constant="25" id="eYd-GO-MSg"/>
+                            <constraint firstItem="faz-aU-hgz" firstAttribute="top" secondItem="kZp-gu-C5U" secondAttribute="bottom" constant="25" id="gBV-nd-gdg"/>
+                            <constraint firstItem="kZp-gu-C5U" firstAttribute="leading" secondItem="Yud-WU-Nm3" secondAttribute="leadingMargin" constant="10" id="s4c-Jo-RJF"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bGY-eu-2D3"/>
+                                <exclude reference="s4c-Jo-RJF"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="brandTextField" destination="kZp-gu-C5U" id="di5-OZ-p8m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Md-tW-uf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3719" y="423"/>
+        </scene>
+        <!--GameTVC-->
+        <scene sceneID="hSS-kY-WMC">
+            <objects>
+                <tableViewController storyboardIdentifier="gameTVC" id="FIf-aB-uFI" customClass="GameTVC" customModule="GetTurnt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="TIR-VD-9jn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="uVx-nd-PzV">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GET TURNT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fds-mj-BfC">
+                                    <rect key="frame" x="228" y="15" width="144" height="29"/>
+                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="centerX" secondItem="fds-mj-BfC" secondAttribute="centerX" id="H8i-hD-aTo"/>
+                                <constraint firstItem="fds-mj-BfC" firstAttribute="top" secondItem="uVx-nd-PzV" secondAttribute="top" constant="15" id="SL4-YQ-zO7"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="wineCell" rowHeight="200" id="Tqc-jM-fAh" customClass="InGameTableViewCell" customModule="GetTurnt" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tqc-jM-fAh" id="nMx-rE-R7m">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Station #1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEf-db-JCj">
+                                            <rect key="frame" x="8" y="8" width="124" height="29"/>
+                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlG-Pe-UrZ">
+                                            <rect key="frame" x="519" y="65" width="73" height="71"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="73" id="WYs-E2-4Wy"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="61"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vD7-Qg-Vha" customClass="CustomSlider">
+                                            <rect key="frame" x="16" y="85" width="488" height="30"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="j9Q-up-vhh"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vD7-Qg-Vha" firstAttribute="leading" secondItem="nMx-rE-R7m" secondAttribute="leadingMargin" constant="8" id="5zI-Xm-qcv"/>
+                                        <constraint firstAttribute="centerY" secondItem="vD7-Qg-Vha" secondAttribute="centerY" id="Al7-cv-K0t"/>
+                                        <constraint firstItem="LlG-Pe-UrZ" firstAttribute="leading" secondItem="vD7-Qg-Vha" secondAttribute="trailing" constant="15" id="HbB-nc-FJV"/>
+                                        <constraint firstAttribute="centerY" secondItem="LlG-Pe-UrZ" secondAttribute="centerY" id="ULe-AH-8Y9"/>
+                                        <constraint firstItem="LlG-Pe-UrZ" firstAttribute="trailing" secondItem="nMx-rE-R7m" secondAttribute="trailingMargin" id="XLe-y6-8b9"/>
+                                        <constraint firstItem="gEf-db-JCj" firstAttribute="leading" secondItem="nMx-rE-R7m" secondAttribute="leadingMargin" id="emB-MX-zbu"/>
+                                        <constraint firstItem="gEf-db-JCj" firstAttribute="top" secondItem="nMx-rE-R7m" secondAttribute="topMargin" id="sAF-yb-pUR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ratingLabel" destination="LlG-Pe-UrZ" id="7zZ-s1-eNK"/>
+                                    <outlet property="ratingSlider" destination="vD7-Qg-Vha" id="WHf-6x-oL4"/>
+                                    <outlet property="stationLabel" destination="gEf-db-JCj" id="oep-6d-IqG"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FIf-aB-uFI" id="oDX-kQ-8S6"/>
+                            <outlet property="delegate" destination="FIf-aB-uFI" id="GOu-Ew-bs7"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oov-RF-Zwv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4450" y="423"/>
+        </scene>
         <!--Join GameTVC-->
         <scene sceneID="4ht-wW-KEq">
             <objects>
@@ -535,25 +692,25 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Bottles:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APB-4b-w1I">
-                                            <rect key="frame" x="16" y="108" width="67.5" height="17.5"/>
+                                            <rect key="frame" x="16" y="108" width="68" height="18"/>
                                             <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10n-vG-kyQ">
-                                            <rect key="frame" x="91" y="108" width="10" height="17.5"/>
+                                            <rect key="frame" x="91" y="108" width="10" height="18"/>
                                             <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Host:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18M-xt-6lo">
-                                            <rect key="frame" x="16" y="137" width="37.5" height="17.5"/>
+                                            <rect key="frame" x="16" y="137" width="38" height="18"/>
                                             <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vri-H4-ZmV">
-                                            <rect key="frame" x="61" y="137" width="41.5" height="17.5"/>
+                                            <rect key="frame" x="61" y="137" width="42" height="18"/>
                                             <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -684,32 +841,6 @@
             </objects>
             <point key="canvasLocation" x="2976" y="851"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="vy4-4H-qie">
-            <objects>
-                <tableViewController id="yEC-cg-1Dj" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VSa-zL-ivF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="A1h-4q-Af9">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A1h-4q-Af9" id="ZAF-Ry-2OI">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="yEC-cg-1Dj" id="uk7-Wo-Qbx"/>
-                            <outlet property="delegate" destination="yEC-cg-1Dj" id="USB-pd-H2m"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eoH-DU-iHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3702" y="389"/>
-        </scene>
     </scenes>
     <resources>
         <image name="DSC_0075" width="6000" height="4000"/>
@@ -717,7 +848,4 @@
         <image name="White-wine cropped" width="105" height="282"/>
         <image name="background-image" width="640" height="1136"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="mlC-yb-NLd"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -25,8 +25,8 @@ class TurntData: NSObject {
         }
     }
     
-    var currentGame: PFObject?  // is this being used?
-    
+    // current game info
+    var currentGame: PFObject?
     
     // existing games list
     var gameFeedItems: [PFObject] = []
@@ -50,25 +50,25 @@ class TurntData: NSObject {
     }
     
     // current game wine list
-    var currentGameItems: [PFObject] = []
-    
-    func refreshCurrentGameFeedItems(completion: () -> ()) {
-        
-        var feedQuery = PFQuery(className: "Game")
-        
-        feedQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            
-            if objects.count > 0 {
-                
-                self.gameFeedItems = objects as [PFObject]
-                
-            }
-            
-            completion()
-            
-        }
-        
-    }
+//    var currentGameItems: [PFObject] = []
+//    
+//    func refreshCurrentGameFeedItems(completion: () -> ()) {
+//        
+//        var feedQuery = PFQuery(className: "Game")
+//        
+//        feedQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+//            
+//            if objects.count > 0 {
+//                
+//                self.gameFeedItems = objects as [PFObject]
+//                
+//            }
+//            
+//            completion()
+//            
+//        }
+//        
+//    }
     
     
     class func mainData() -> TurntData {

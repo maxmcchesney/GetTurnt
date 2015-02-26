@@ -9,10 +9,21 @@
 import UIKit
 
 class GameTVC: UITableViewController {
+    
+    var currentGame: PFObject?
 
+    var gameItems: [String:String] = ["":""]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        currentGame = TurntData.mainData().currentGame
+        
+        gameItems = currentGame?.valueForKey("playerInfo") as [String:String]
+
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -36,18 +47,29 @@ class GameTVC: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return gameItems.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("wineCell", forIndexPath: indexPath) as InGameTableViewCell
 
-        // Configure the cell...
+        let name = gameItems.keys.array[indexPath.row]
+        
+        let wine = gameItems[name]
+        
+        cell.playerName = name
+        cell.playerWine = wine
 
+        cell.stationLabel.text = "Station #\(indexPath.row + 1)"
+
+        
+        
+        
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
