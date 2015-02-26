@@ -8,17 +8,11 @@
 
 import UIKit
 
-class HostNewGameVC: UIViewController {
+class HostNewGameVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var wineTypeControl: UISegmentedControl!
     @IBOutlet weak var bottleCountLabel: UILabel!
-    
-    
-    
-    
-    
-    
     @IBOutlet weak var wineTypeTextField: UITextField!
     @IBOutlet weak var bottlesRequiredControl: UIStepper!
     
@@ -32,8 +26,16 @@ class HostNewGameVC: UIViewController {
         bottleCountLabel.text = "# of Bottles / Person: \(bottlesRequired)"
         wineColor = wineTypeControl.titleForSegmentAtIndex(wineTypeControl.selectedSegmentIndex)!
         
+        groupNameTextField.delegate = self
+        wineTypeTextField.delegate = self
+        
     }
     
+    // hide text field when 'done' key is pressed
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        self.view.endEditing(true);
+        return false;
+    }
     
     @IBAction func changeWineColor(sender: UISegmentedControl) {
         
@@ -77,6 +79,8 @@ class HostNewGameVC: UIViewController {
 
         if wineTypeTextField.text != "" {
             newGame["wineType"] = wineTypeTextField.text
+        } else {
+            newGame["wineType"] = "Any"
         }
         
         // add new game to singleton and parse
@@ -93,6 +97,8 @@ class HostNewGameVC: UIViewController {
         }
         
     }
+    
+
     
     
     override func didReceiveMemoryWarning() {

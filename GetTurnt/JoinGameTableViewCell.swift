@@ -68,13 +68,6 @@ class JoinGameTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    @IBAction func joinGame(sender: AnyObject) {
-        println("User requests to join game...")
-    
-    }
-    
-    
-
     override func setSelected(selected: Bool, animated: Bool) {
 //        super.setSelected(selected, animated: animated)   // commented out so selected state doesn't affect view style
 
