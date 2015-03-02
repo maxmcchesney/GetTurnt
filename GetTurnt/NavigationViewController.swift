@@ -17,7 +17,7 @@ class NavigationViewController: UINavigationController {
         
 //        navigationController.navigationBar.barTintColor = UIColor.greenColor()
         
-        self.navigationBar.barTintColor = UIColor(red:0.15, green:0.55, blue:0.1, alpha:0.2)
+//        self.navigationBar.barTintColor = UIColor(red:0.15, green:0.55, blue:0.1, alpha:0.2)
         self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
 //    
 ////        UINavigationBar.appearance().backgroundColor = UIColor.greenColor()

@@ -10,25 +10,62 @@ import UIKit
 
 class GameTVC: UITableViewController {
     
+    @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet weak var showWineButton: UIButton!
+    @IBOutlet weak var hostLabel: UILabel!
+    
     var currentGame: PFObject?
-
     var gameItems: [String:String] = ["":""]
     
+    var wineNamesVisible: Bool = false
+    @IBAction func showWineNames(sender: AnyObject) {
+        // toggle the wine / player names
+
+        if wineNamesVisible {
+            wineNamesVisible = false
+            showWineButton.setTitle("Show Wines", forState: .Normal)
+            tableView.reloadData()
+        } else {
+            wineNamesVisible = true
+            tableView.reloadData()
+            showWineButton.setTitle("Hide Wines", forState: .Normal)
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        currentGame = TurntData.mainData().currentGame
-        
-        gameItems = currentGame?.valueForKey("playerInfo") as [String:String]
-
-        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        currentGame = TurntData.mainData().currentGame
+        
+        gameItems = currentGame?.valueForKey("playerInfo") as [String:String]
+        
+        groupNameLabel.text = currentGame?.valueForKey("groupName") as? String
+        
+        let host = currentGame?.valueForKey("host") as? String
+
+        showWineButton.hidden = true
+        hostLabel.hidden = true
+        
+        if host == PFUser.currentUser().username {
+        
+            showWineButton.hidden = false
+            hostLabel.hidden = false
+        
+        }
+            
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +84,7 @@ class GameTVC: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
+//        println(gameItems.count)
         return gameItems.count
     }
 
@@ -55,17 +93,21 @@ class GameTVC: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("wineCell", forIndexPath: indexPath) as InGameTableViewCell
 
         let name = gameItems.keys.array[indexPath.row]
+        let wine = gameItems[name]!
         
-        let wine = gameItems[name]
-        
-        cell.playerName = name
-        cell.playerWine = wine
+        cell.selectedGameID = currentGame?.objectId
 
         cell.stationLabel.text = "Station #\(indexPath.row + 1)"
-
         
+        cell.wineNameLabel.text = wine
+        cell.usernameLabel.text = name
+        cell.wineNameLabel.hidden = true
+        cell.usernameLabel.hidden = true
         
-        
+        if wineNamesVisible {
+            cell.wineNameLabel.hidden = false
+            cell.usernameLabel.hidden = false
+        }
         
         return cell
     }

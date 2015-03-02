@@ -306,6 +306,7 @@
 				TargetAttributes = {
 					D805A0C41A89323D001EF269 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = ZKD389657L;
 					};
 					D805A0D91A89323D001EF269 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -494,6 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GetTurnt",
@@ -511,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GetTurnt",

@@ -94,7 +94,7 @@ class HostNewGameVC: UIViewController, UITextFieldDelegate {
                 
                 userWineInfoVC.selectedGameID = newGame.objectId
                 
-                self.presentViewController(userWineInfoVC, animated: true, completion: nil)
+                self.navigationController?.pushViewController(userWineInfoVC, animated: true)
                 
             } else {
                 println("Game not saved. Error: \(error)")

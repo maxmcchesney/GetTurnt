@@ -92,7 +92,7 @@ IB_DESIGNABLE
     CGFloat x = touchX - circleDiameter / 2;
     if (x > width - circleDiameter) x = width - circleDiameter;
     if ( x < 0) x = 0;
-    
+
     [self.delegate sliderValue:x / (width - circleDiameter) forSlider:self.sliderType];
     
 //    NSLog(@"slider value: %f", x / (width - circleDiameter));
@@ -102,6 +102,9 @@ IB_DESIGNABLE
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     // save rating here?
+    
+    [self.delegate saveValue];
+    
 }
 
 

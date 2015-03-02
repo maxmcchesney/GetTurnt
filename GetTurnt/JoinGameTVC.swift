@@ -70,12 +70,41 @@ class JoinGameTVC: UITableViewController {
         
         let selectedGameID = TurntData.mainData().gameFeedItems[indexPath.row].objectId
         
-        // TODO: check if user already has wine types entered and if not push VC
-        let userWineInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("userWineInfoVC") as UserWineInfoViewController
-        userWineInfoVC.selectedGameID = selectedGameID
-        self.presentViewController(userWineInfoVC, animated: true, completion: nil)
+        // Check if user already has wine types entered and if not push VC
         
-        
+        var query = PFQuery(className:"Game")
+        query.getObjectInBackgroundWithId(selectedGameID, block: { (game, error) -> Void in
+            
+            if error != nil {
+                println(error)
+            } else {
+                
+                let currentGame: PFObject = game
+                
+                if var info = currentGame["playerInfo"] as? [String:String] {
+                    
+                    if info[PFUser.currentUser().username] != nil {
+                        // if user already has wine in server, skip wine info VC
+                        println("User already has wine type entered, going straight to game...")
+                        TurntData.mainData().currentGame = currentGame
+                        let gameTVC = self.storyboard?.instantiateViewControllerWithIdentifier("gameTVC") as GameTVC
+                        self.navigationController?.pushViewController(gameTVC, animated: true)
+                        
+                    } else {
+                        // send user to wine info vc to enter wine brand
+                        println("User doesn't have wine type entered, requesting wine type...")
+                        let userWineInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("userWineInfoVC") as UserWineInfoViewController
+                        userWineInfoVC.selectedGameID = selectedGameID
+
+                        self.navigationController?.pushViewController(userWineInfoVC, animated: true)
+                        
+                    }
+   
+                }
+                
+            }
+            
+        })
         
     }
     

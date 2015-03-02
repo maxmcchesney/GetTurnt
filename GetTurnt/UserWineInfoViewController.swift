@@ -56,19 +56,13 @@ class UserWineInfoViewController: UIViewController {
                     let currentGame: PFObject = game
                     
                     if var info = currentGame["playerInfo"] as? [String:String] {
-                        
-                        // add wine and player to game
-                        
-                        info[PFUser.currentUser().username] = self.brandTextField.text
-                        
-                        currentGame["playerInfo"] = info
-                        
+                            // add wine and player to game
+                            info[PFUser.currentUser().username] = self.brandTextField.text
+                            currentGame["playerInfo"] = info
+
                     } else {
-                        
                         // add wine and player to game
-                        
                         currentGame["playerInfo"] = [PFUser.currentUser().username : self.brandTextField.text]
-                        
                     }
                     
                     currentGame.saveInBackgroundWithBlock({ (success, error) -> Void in
@@ -77,9 +71,9 @@ class UserWineInfoViewController: UIViewController {
                             println("Player info saved successfully to Parse.")
                             
                             TurntData.mainData().currentGame = currentGame
-                            
                             let gameTVC = self.storyboard?.instantiateViewControllerWithIdentifier("gameTVC") as GameTVC
-                            self.presentViewController(gameTVC, animated: true, completion: nil)
+
+                            self.navigationController?.pushViewController(gameTVC, animated: true)
                             
                         } else {
                             println("Parse Error: \(error)")

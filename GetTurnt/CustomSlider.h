@@ -25,5 +25,6 @@
 @protocol CustomSliderDelegate <NSObject>
 // method to update value
 - (void)sliderValue:(float)value forSlider:(NSString *)sliderType;
+- (void)saveValue;
 
 @end
